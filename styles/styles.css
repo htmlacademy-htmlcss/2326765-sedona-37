@@ -38,7 +38,6 @@ body {
   line-height: 24px;
   font-weight: 700;
   text-align: center;
-  color: #000000;
   background-color: #FFFFFF;
   text-decoration: none;
 }
@@ -59,7 +58,7 @@ body {
 }
 
 .hero {
-  background-color: #FFFFFF;
+  background-color: #000000;
   background-image: url("../images/index/hero-devider.png"),
     url("../images/index/index-background.jpg");
   background-size: 100% auto;
@@ -72,13 +71,12 @@ body {
   margin: 0 auto;
 }
 
-.slogan {
+.advantages-title {
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
   text-align: center;
   color: #000000;
-  background-color: #FFFFFF;
   text-transform: uppercase;
 }
 
@@ -87,7 +85,7 @@ body {
   text-align: center;
 }
 
-.see-the-reasons {
+.advantages-description {
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
@@ -96,7 +94,7 @@ body {
   background-color: #FFFFFF;
 }
 
-.advantages-title {
+.advantages-item-title {
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
@@ -259,8 +257,7 @@ p.dark-blue {
   background-color: transparent;
 }
 
-.catalog-title,
-.catalog-title span {
+.catalog-title {
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
