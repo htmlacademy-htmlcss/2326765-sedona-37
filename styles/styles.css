@@ -41,6 +41,7 @@ body {
 .page-header {
   color: #000000;
   background-color: #FFFFFF;
+  padding: 0 70px;
 }
 
 .navigation {
@@ -219,6 +220,7 @@ p.dark-blue {
 
 .page-footer {
   display: flex;
+  padding: 0 70px;
 }
 
 .contacts-phone {
@@ -235,6 +237,7 @@ p.dark-blue {
   background-image: url("../images/catalog/filter-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 0 70px;
 }
 
 .catalog-header-title {
@@ -277,6 +280,10 @@ p.dark-blue {
 
 .button-reset {
   background-color: transparent;
+}
+
+.catalog {
+  padding: 0 70px;
 }
 
 .catalog-title {
