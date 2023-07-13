@@ -285,9 +285,7 @@ body {
   transform: translate(-30px);
 }
 
-/* даст верный цвет выше, если убрать значения ниже */
-.advantages-item-description:first-child::before,
-.advantages-item-description:last-child::before {
+.dark-blue .advantages-item-description::before {
   content: "";
   background: rgba(255, 255, 255, 0.30);
 }
@@ -302,9 +300,16 @@ body {
   background-color: #82B3D3;
 }
 
-/* если это убрать (а хочется, потому что прописаны классы last-child), заголовок в пунктах преимущест везде станосится чёрным, а не белым в некоторых местах */
 .dark-blue .advantages-item-title {
   color: #FFFFFF;
+}
+
+.advantages-item-image {
+  display: block;
+}
+
+.advantages-image {
+  height: 100%;
 }
 
 .advantages-image img {
@@ -1150,4 +1155,236 @@ body {
 
 .sub-text-catalog {
   color: #000000;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.80);
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 64px 70px;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+}
+
+.modal-search {
+  width: 577px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 64px;
+  right: 52px;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #F2F2F2;
+  background-image: url("../images/icons/cross.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.modal-close-button-icon {
+  vertical-align: middle;
+}
+
+.modal-close-button:hover {
+  background-color: #E6E6E6;
+}
+
+.modal-close-button:focus {
+  background-color: #E6E6E6;
+  border: 3px solid #83B3D3;
+  outline: none;
+}
+
+.modal-close-button:active {
+  outline: none;
+  opacity: 50%;
+}
+
+.modal-title {
+  margin: 0 0 64px 0;
+  font-family: "PT Sans";
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-name {
+  padding: 12px 0;
+  font-family: "PT Sans";
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+.modal-form-field {
+  padding: 12px 20px;
+  background-color: #F2F2F2;
+  border: 0;
+  border-radius: 4px;
+  font-family: "PT Sans";
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.field-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.date-field {
+  width: 400px;
+  margin-bottom: 4px;
+}
+
+.modal-warning-date {
+  display: block;
+  font-family: "PT Sans";
+  color: #FF5757;
+  margin-bottom: 23px;
+  margin-left: 157px;
+}
+
+.modal-hint-date {
+  display: block;
+  font-family: "PT Sans";
+  color: #333333;
+  margin-bottom: 23px;
+  margin-left: 157px;
+}
+
+.modal-group-persons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.persons-field {
+  margin-left: 46px;
+  width: 110px;
+  max-width: 120px;
+  box-sizing: border-box;
+}
+
+.persons-field::-webkit-outer-spin-button,
+.persons-field::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+
+.tooltip {
+  position: relative;
+  margin-top: 11px;
+  margin-left: 10px;
+  display: block;
+}
+
+.tooltip-toggle {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #83B3D3;
+}
+
+.tooltip-icon {
+  vertical-align: middle;
+}
+
+.tooltip-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  z-index: 1;
+  display: none;
+  width: 256px;
+  border-radius: 10px;
+  margin: 0;
+  padding: 15px 18px;
+  background-color: #333333;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.30);
+  font-family: "PT Sans";
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.tooltip-toggle:hover {
+  background-color: #68A2CA;
+}
+
+/* не работает */
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
+.tooltip-text::after {
+  content: "";
+  background-image: url("../images/icons/tooltip-arrow.svg");
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 8px;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-form-button {
+  font-family: "PT Sans";
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #83B3D3;
+  border: 0;
+  border-radius: 10px;
+  padding: 18px 77px;
+}
+
+.modal-form-button:hover {
+  background-color: #68A2CA;
+}
+
+.modal-form-button:focus {
+  background-color: #68A2CA;
+}
+
+.modal-form-button:active {
+  background-color: #68A2CA;
+  color: rgba(255, 255, 255, 0.3);
+
 }
