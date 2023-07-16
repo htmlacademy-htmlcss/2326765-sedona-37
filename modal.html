@@ -66,7 +66,7 @@
         </section>
         <section class="advantages">
           <div class="advantages-title-container">
-            <h2 class="advantages-title">Седона - небольшой городок в Аризоне, заслуживающий большего!</h2>
+            <h2 class="advantages-title">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
             <p class="advantages-description">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
           </div>
           <ul class="advantages-list">
@@ -202,13 +202,13 @@
           <section class="modal-content">
             <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
             <form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
-              <p class="field-group">
+              <p class="field-group p-date-field">
                 <label class="field-name" for="modal-entry">Дата заезда:</label>
                 <input class="modal-form-field date-field field" type="text" id="modal-entry" name="modal-entry-date"
                   value="27 апреля 2020">
                 <span class="modal-warning-date">Мы не можем отправить вас в прошлое.</span>
               </p>
-              <p class="field-group">
+              <p class="field-group p-date-field">
                 <label class="field-name" for="modal-depature">Дата выезда:</label>
                 <input class="modal-form-field date-field field" type="text" id="modal-depature"
                   name="modal-depature-date" value="1 сентября 2023">
@@ -217,7 +217,19 @@
               <div class="modal-group-persons-container">
                 <p class="field-group">
                   <label class="field-name">Взрослые:</label>
-                  <input class="modal-form-field persons-field" type="number" name="modal-adults" value="2">
+                  <span class="oi">
+                    <span class="p-persons-field minus-icon">
+                      <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0L0 2L14 2V0L0 0Z" fill="#756157" fill-opacity="0.3" />
+                      </svg>
+                    </span>
+                    <input class="modal-form-field persons-field" type="number" name="modal-adults" value="2">
+                    <span class="p-persons-field plus-icon">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" fill="#756157" fill-opacity="0.3" />
+                      </svg>
+                    </span>
+                  </span>
                 </p>
                 <p class="field-group field-children">
                   <span class="field-name">
@@ -225,8 +237,8 @@
                   </span>
                   <span class="tooltip">
                     <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
-                      <svg class="tooltip-icon" xmlns="http://www.w3.org/2000/svg" width="2" height="12" fill="none"
-                        viewBox="0 0 2 12">
+                      <svg class="minus-icon" class="tooltip-icon" xmlns="http://www.w3.org/2000/svg" width="2"
+                        height="12" fill="none" viewBox="0 0 2 12">
                         <path fill="#fff" fill-rule="evenodd" d="M0 0h2v2H0V0Zm2 12H0V3h2v9Z" clip-rule="evenodd" />
                       </svg>
                       <span class="tooltip-text" role="tooltip" id="tooltip-label-date">
@@ -235,7 +247,17 @@
                       </span>
                     </button>
                   </span>
+                  <span class="p-persons-field minus-icon">
+                    <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 0L0 2L14 2V0L0 0Z" fill="#756157" fill-opacity="0.3" />
+                    </svg>
+                  </span>
                   <input class="modal-form-field persons-field" type="number" name="modal-children" value="2">
+                  <span class="p-persons-field plus-icon">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" fill="#756157" fill-opacity="0.3" />
+                    </svg>
+                  </span>
                 </p>
               </div>
               <button class="button modal-form-button" type="submit">Найти</button>
