@@ -40,6 +40,8 @@
                 </span>
                 <span class="visually-hidden">Добавленных в избранное отелей:
                 </span>
+                <span class="visually-hidden">Добавленных в избранное отелей:
+                </span>
                 <span class="favourites-circle">12</span>
               </a>
             </li>
@@ -74,12 +76,10 @@
                 жизнь
               </p>
             </li>
-            <li class="advantages-item-image">
-              <div class="advantages-image">
-                <img src="images/index/advan-photo-1.jpg" width="800" height="385"
-                  alt="Фотография здания в городке Седона">
-              </div>
-            </li>
+            <div class="advantages-image">
+              <img src="images/index/advan-photo-1.jpg" width="800" height="385"
+                alt="Фотография здания в городке Седона">
+            </div>
             <li class="advantages-item">
               <h3 class="advantages-item-title">Небольшая площадь</h3>
               <p class="advantages-item-description">Все достопримечательности находятся очень близко</p>
@@ -92,11 +92,9 @@
               <h3 class="advantages-item-title">Мало туристов</h3>
               <p class="advantages-item-description">Большинство едет в Гранд Каньон и толпится там</p>
             </li>
-            <li class="advantages-item-image">
-              <div class="advantages-image">
-                <img src="images/index/advan-photo-2.jpg" width="800" height="385" alt="Природные каменный мост">
-              </div>
-            </li>
+            <div class="advantages-image">
+              <img src="images/index/advan-photo-2.jpg" width="800" height="385" alt="Природные каменный мост">
+            </div>
             <li class="advantages-item dark-blue">
               <h3 class="advantages-item-title white">Там есть мост дьявола</h3>
               <p class="advantages-item-description">Да, по нему можно пройти! Если&nbsp;вы осмелитесь,
@@ -139,8 +137,7 @@
             <p class="subscribe-text sub-text-index">Только полезная информация и никакого спама,
               честное&nbsp;бойскаутское!</p>
             <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-              <input class="subscribe-input subscribe-input-index" type="email" name="subscribe-email"
-                placeholder="Ваш e-mail" required>
+              <input class="subscribe-input" type="email" name="subscribe-email" placeholder="Ваш e-mail" required>
               <button class="button subscribe-email-button" type="button">Подписаться</button>
             </form>
           </div>
@@ -197,6 +194,55 @@
           </a>
         </section>
       </footer>
+      <div class="modal-container modal-container-close">
+        <div class="modal modal-search">
+          <button class="modal-close-button">
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+          <section class="modal-content">
+            <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
+            <form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
+              <p class="field-group">
+                <label class="field-name" for="modal-entry">Дата заезда:</label>
+                <input class="modal-form-field date-field field" type="text" id="modal-entry" name="modal-entry-date"
+                  value="27 апреля 2020">
+                <span class="modal-warning-date">Мы не можем отправить вас в прошлое.</span>
+              </p>
+              <p class="field-group">
+                <label class="field-name" for="modal-depature">Дата выезда:</label>
+                <input class="modal-form-field date-field field" type="text" id="modal-depature"
+                  name="modal-depature-date" value="1 сентября 2023">
+                <span class="modal-hint-date">На эти даты есть свободные номера. Пока есть.</span>
+              </p>
+              <div class="modal-group-persons-container">
+                <p class="field-group">
+                  <label class="field-name">Взрослые:</label>
+                  <input class="modal-form-field persons-field" type="number" name="modal-adults" value="2">
+                </p>
+                <p class="field-group field-children">
+                  <span class="field-name">
+                    <label class="field-name">Дети:</label>
+                  </span>
+                  <span class="tooltip">
+                    <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
+                      <svg class="tooltip-icon" xmlns="http://www.w3.org/2000/svg" width="2" height="12" fill="none"
+                        viewBox="0 0 2 12">
+                        <path fill="#fff" fill-rule="evenodd" d="M0 0h2v2H0V0Zm2 12H0V3h2v9Z" clip-rule="evenodd" />
+                      </svg>
+                      <span class="tooltip-text" role="tooltip" id="tooltip-label-date">
+                        Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет
+                        размещаются бесплатно.
+                      </span>
+                    </button>
+                  </span>
+                  <input class="modal-form-field persons-field" type="number" name="modal-children" value="2">
+                </p>
+              </div>
+              <button class="button modal-form-button" type="submit">Найти</button>
+            </form>
+          </section>
+        </div>
+      </div>
     </div>
   </body>
 

@@ -74,6 +74,7 @@ body {
   margin-right: 30px;
   margin-bottom: -11px;
   cursor: pointer;
+  contain: content;
 }
 
 .navigation-link {
@@ -98,6 +99,13 @@ body {
   top: 21px;
   background-color: #756257;
 }
+
+.navigation-link:focus {
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px black;
+  outline: none;
+}
+
 
 .button {
   font-family: inherit;
@@ -149,6 +157,23 @@ body {
   background-position: center;
 }
 
+.favourites-circle {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #7DB54F;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 10px;
+  line-height: 20px;
+
+}
+
 .search-hotels {
   min-width: 160px;
   min-height: 36px;
@@ -188,7 +213,7 @@ body {
   background-color: #000000;
   background-image: url("../images/index/hero-devider.png"),
     url("../images/index/index-background.jpg");
-  background-size: 100% auto;
+  background-size: 100% auto, 100% auto;
   background-repeat: no-repeat;
   background-position: center bottom, center;
 }
@@ -285,9 +310,7 @@ body {
   transform: translate(-30px);
 }
 
-/* даст верный цвет выше, если убрать значения ниже */
-.advantages-item-description:first-child::before,
-.advantages-item-description:last-child::before {
+.dark-blue .advantages-item-description::before {
   content: "";
   background: rgba(255, 255, 255, 0.30);
 }
@@ -302,9 +325,16 @@ body {
   background-color: #82B3D3;
 }
 
-/* если это убрать (а хочется, потому что прописаны классы last-child), заголовок в пунктах преимущест везде станосится чёрным, а не белым в некоторых местах */
 .dark-blue .advantages-item-title {
   color: #FFFFFF;
+}
+
+.advantages-item-image {
+  display: block;
+}
+
+.advantages-image {
+  height: 100%;
 }
 
 .advantages-image img {
@@ -476,6 +506,7 @@ body {
 }
 
 .subscribe-form {
+  position: relative;
   display: flex;
   margin: 0;
 }
@@ -484,6 +515,24 @@ body {
   width: 452px;
   padding: 14px 345px 14px 20px;
   box-sizing: border-box;
+  background-color: rgba(242, 242, 242, 1);
+  border: 0;
+  border-radius: 4px 0 0 4px;
+  font-family: "PT Sans";
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.subscribe-input-index::before {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/index/calendar-icon.svg");
+  background-size: 16px 15px;
+  background-repeat: no-repeat;
+  content: "";
 }
 
 .subscribe-email-button {
@@ -494,6 +543,7 @@ body {
   background-color: #82B3D3;
   padding: 8px 50px;
   margin: 0 0 0 auto;
+  border-radius: 0 4px 4px 0;
 }
 
 .subscribe-email-button:hover {
@@ -576,6 +626,7 @@ body {
   color: rgba(117, 97, 87, 1);
   outline: auto;
   /* есть ли вообще такое значение? в интернете не нашла, но из-за него обводка заданного мной цвета */
+  contain: content;
 }
 
 .contacts-phone:active {
@@ -731,18 +782,170 @@ body {
 }
 
 .control {
+  position: relative;
   font-size: 18px;
   line-height: 23px;
   font-weight: 400;
+  display: block;
+  padding-left: 36px;
+}
+
+.control-range {
+  position: relative;
+}
+
+.control-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+}
+
+.control:hover .control-mark,
+.control:hover .control-mark-radio {
+  opacity: 30%;
+}
+
+.control:focus-within .control-mark,
+.control:focus-within .control-mark-radio {
+  box-shadow: 0 0 0 2px rgba(104, 162, 202, 1);
+}
+
+.control:active .control-mark,
+.control:active .control-mark-radio {
+  opacity: 30%;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../images/catalog/tick.svg");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  content: "";
+}
+
+.control-mark-radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: block;
+}
+
+.control-input[type="radio"]:checked + .control-mark-radio::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: black;
+  transform: translate(-50% -50%);
+  display: block;
+  content: "";
+  border-radius: 50%;
 }
 
 .cost-input {
   width: 143px;
   height: 48px;
-  padding: 0;
+  padding: 12px 20px;
+  margin-bottom: 36px;
   border: 0;
   box-sizing: border-box;
+  background-color: #F2F2F2;
 }
+
+.cost-input:focus {
+  box-shadow: 0 0 0 3px #83B3D3;
+  outline: none;
+}
+
+.cost-input:active {
+  box-shadow: 0 0 0 3px #000000;
+}
+
+.cost-from-input {
+  border-radius: 4px 0 0 4px;
+}
+
+.cost-before-input {
+  border-radius: 0 4px 4px 0;
+}
+
+.cost-input-text {
+  position: absolute;
+  z-index: 1;
+  bottom: 49px;
+  right: 20px;
+  display: block;
+  font-family: "PT Sans";
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.1);
+  text-transform: lowercase;
+}
+
+.cost-input::placeholder {
+  font-family: "PT Sans";
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.cost-input::-webkit-outer-spin-button,
+.cost-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.range {
+  flex-wrap: wrap;
+  width: min-content;
+}
+
+.range-scale {
+  position: relative;
+  width: 288px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: rgba(255, 255, 255);
+}
+
+.range-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: 4px;
+}
+
+.toggle-min {
+  top: -10px;
+}
+
+.toggle-max {
+  top: -10px;
+  right: -10px;
+}
+
 
 .filter-buttons {
   display: flex;
@@ -784,7 +987,8 @@ body {
 }
 
 .button-reset:focus {
-  box-shadow: inset 0 0 0 3px #83B3D3;
+  box-shadow: 0 0 0 3px #83B3D3;
+  outline: none;
 }
 
 .button-reset:active {
@@ -835,7 +1039,8 @@ body {
 }
 
 .select-control:focus {
-  box-shadow: inset 0 0 0 2px rgba(104, 162, 202, 1);
+  box-shadow: 0 0 0 2px rgba(104, 162, 202, 1);
+  outline: none;
 }
 
 .select-control:active {
@@ -877,9 +1082,10 @@ body {
 
 .card-grid-toggle:focus {
   border: none;
-  box-shadow: inset 0 0 0 2px #68A2CA;
+  box-shadow: 0 0 0 2px #68A2CA;
   width: 48px;
   text-align: center;
+  outline: none;
 }
 
 .card-grid-toggle:active {
@@ -915,6 +1121,7 @@ body {
   text-transform: capitalize;
   margin: 0;
   grid-row: 2/3;
+  contain: content;
 }
 
 .product-card {
@@ -1150,4 +1357,240 @@ body {
 
 .sub-text-catalog {
   color: #000000;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.80);
+}
+
+.modal-container-close {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 64px 70px;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+}
+
+.modal-search {
+  width: 577px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 64px;
+  right: 52px;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #F2F2F2;
+  background-image: url("../images/icons/cross.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.modal-close-button-icon {
+  vertical-align: middle;
+}
+
+.modal-close-button:hover {
+  background-color: #E6E6E6;
+}
+
+.modal-close-button:focus {
+  background-color: #E6E6E6;
+  border: 3px solid #83B3D3;
+  outline: none;
+}
+
+.modal-close-button:active {
+  outline: none;
+  opacity: 50%;
+}
+
+.modal-title {
+  margin: 0 0 64px 0;
+  font-family: "PT Sans";
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-name {
+  padding: 12px 0;
+  font-family: "PT Sans";
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+.modal-form-field {
+  padding: 12px 20px;
+  background-color: #F2F2F2;
+  border: 0;
+  border-radius: 4px;
+  font-family: "PT Sans";
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.field-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.date-field {
+  width: 400px;
+  margin-bottom: 4px;
+}
+
+.modal-warning-date {
+  display: block;
+  font-family: "PT Sans";
+  color: #FF5757;
+  margin-bottom: 23px;
+  margin-left: 157px;
+}
+
+.modal-hint-date {
+  display: block;
+  font-family: "PT Sans";
+  color: #333333;
+  margin-bottom: 23px;
+  margin-left: 157px;
+}
+
+.modal-group-persons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.persons-field {
+  margin-left: 46px;
+  width: 110px;
+  max-width: 120px;
+  box-sizing: border-box;
+}
+
+.persons-field::-webkit-outer-spin-button,
+.persons-field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+
+.tooltip {
+  position: relative;
+  margin-top: 11px;
+  margin-left: 10px;
+  display: block;
+}
+
+.tooltip-toggle {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #83B3D3;
+}
+
+.tooltip-icon {
+  vertical-align: middle;
+}
+
+.tooltip-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  z-index: 1;
+  display: none;
+  width: 256px;
+  border-radius: 10px;
+  margin: 0;
+  padding: 15px 18px;
+  background-color: #333333;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.30);
+  font-family: "PT Sans";
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.tooltip-toggle:hover {
+  background-color: #68A2CA;
+}
+
+/* не работает */
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
+.tooltip-text::after {
+  content: "";
+  background-image: url("../images/icons/tooltip-arrow.svg");
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 8px;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-form-button {
+  font-family: "PT Sans";
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #83B3D3;
+  border: 0;
+  border-radius: 10px;
+  padding: 18px 77px;
+}
+
+.modal-form-button:hover {
+  background-color: #68A2CA;
+}
+
+.modal-form-button:focus {
+  background-color: #68A2CA;
+}
+
+.modal-form-button:active {
+  background-color: #68A2CA;
+  color: rgba(255, 255, 255, 0.3);
 }
