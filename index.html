@@ -11,7 +11,7 @@
 
   <body>
     <div class="page-container">
-      <header class="page-header">
+      <header class="page-header" data-test="header">
         <nav class="navigation">
           <a class="navigation-logo" aria-current="page">
             <img class="page-header-logo" src="images/icons/logo.svg" width="140" height="70"
@@ -52,8 +52,8 @@
         </nav>
       </header>
 
-      <main class="main-container main-index">
-        <section class="hero">
+      <main class="main-container main-index" data-test="main">
+        <section class="hero" data-test="hero">
           <h1 class="visually-hidden">Седона</h1>
           <img class="hero-welcome welcome" src="images/index/hero-text-welcome.svg" width="187" height="44" lang="en"
             alt="Welcome.">
@@ -62,7 +62,7 @@
           <img class="hero-welcome sedona" src="images/index/hero-text-sedona.svg" width="456" height="212" lang="en"
             alt="Sedona. Because the Grand Canyon sucks!">
         </section>
-        <section class="advantages">
+        <section class="advantages" data-test="advantages">
           <div class="advantages-title-container">
             <h2 class="advantages-title">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
             <p class="advantages-description">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
@@ -105,7 +105,7 @@
 
           </ul>
         </section>
-        <section class="reco">
+        <section class="reco" data-test="service">
           <div class="calling-title-container">
             <h2 class="calling-title">Приезжайте в Седону отдохнуть в комфорте и уюте!</h2>
             <p class="calling-title-description">Опытный персонал и качественное обслуживание!</p>
@@ -126,14 +126,14 @@
             </li>
           </ul>
         </section>
-        <section class="finding-hotel">
+        <section class="finding-hotel" data-test="search">
           <h2 class="finding-hotel-title">Заинтересовались?</h2>
           <p class="finding-hotel-description">Укажите предполагаемые даты поездки, <br>и мы покажем вам лучшие
             предложения
             гостиниц в Седоне</p>
           <button class="button finding-hotel-button" type="button">Поиск гостиницы в Седоне</button>
         </section>
-        <section class="subscribe">
+        <section class="subscribe" data-test="subscribe">
           <div class="subscribe-container">
             <h2 class="subscribe-title subscribe-title-index">Подпишитесь на рассылку</h2>
             <p class="subscribe-text sub-text-index">Только полезная информация и никакого спама,
@@ -147,7 +147,7 @@
         </section>
       </main>
 
-      <footer class="page-footer">
+      <footer class="page-footer" data-test="footer">
         <section class="networks">
           <h2 class="visually-hidden">Наши соцсети</h2>
           <ul class="networks-list">
