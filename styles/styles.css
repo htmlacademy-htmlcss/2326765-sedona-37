@@ -721,14 +721,14 @@ img {
   position: absolute;
 }
 
-.filter-background {
+.catalog-background {
   width: 100%;
   min-height: 412px;
+  margin-bottom: 50px;
   background-color: #789ec2;
   background-image: url("../images/catalog/filter-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  margin-bottom: 50px;
 }
 
 .catalog-header {
@@ -740,8 +740,9 @@ img {
   line-height: 78px;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 7px 0;
+  margin: 0 70px 7px 70px;
   padding-top: 35px;
+
 }
 
 .breadcrumbs {
@@ -1141,7 +1142,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 50px 0 38px 0;
+  margin: 50px 0 0 0;
 }
 
 .select-control {
@@ -1270,8 +1271,7 @@ select:not([multiple]) {
 
 .product-list {
   margin: 0;
-  padding: 0;
-  padding-bottom: 36px;
+  padding: 38px 0 36px 0;
   list-style: none;
   border-bottom: 1px solid #E6E6E6;
   display: -ms-grid;
@@ -1666,7 +1666,7 @@ select:not([multiple]) {
 
 .field-name {
   -ms-flex-preferred-size: min-content;
-  flex-basis: min-content;
+  flex-basis: 23%;
   padding: 12px 0;
   font-family: inherit;
   font-size: 20px;
@@ -1677,6 +1677,8 @@ select:not([multiple]) {
 }
 
 .modal-form-field {
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
   padding: 12px 20px;
   background-color: #f2f2f2;
   border: 0;
