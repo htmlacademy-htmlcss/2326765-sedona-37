@@ -31,6 +31,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
   -o-object-fit: contain;
   object-fit: contain;
 }
@@ -230,29 +231,18 @@ img {
 .hero {
   width: 100%;
   min-height: 485px;
-  background-color: #000000;
+  background-color: #d7e5f0;
   background-image: url("../images/index/hero-devider.png"),
     url("../images/index/index-background.jpg");
-  background-size: 100% auto, 100% auto;
+  background-size: 100% auto, 100% 100%;
   background-repeat: no-repeat;
   background-position: center bottom, center;
 }
 
-.hero-welcome {
+.hero-caption {
   display: block;
   margin: 0 auto;
-}
-
-.welcome {
   padding-top: 51px;
-  padding-bottom: 10px;
-}
-
-.to-the-gorgeous {
-  margin-bottom: 54px;
-}
-
-.sedona {
   margin-bottom: 82px;
 }
 
@@ -380,6 +370,7 @@ img {
   -o-object-fit: cover;
   object-fit: cover;
   height: 100%;
+  background-color: #adc6d4;
 }
 
 .calling-title,
@@ -723,8 +714,8 @@ img {
 
 .catalog-background {
   width: 100%;
-  min-height: 412px;
-  margin-bottom: 50px;
+  min-height: 307pxpx;
+  padding-bottom: 50px;
   background-color: #789ec2;
   background-image: url("../images/catalog/filter-background.jpg");
   background-size: cover;
@@ -926,7 +917,7 @@ img {
   left: 50%;
   width: 10px;
   height: 10px;
-  background: black;
+  background: #3F5E72;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -1356,6 +1347,7 @@ select:not([multiple]) {
 .product-card-image {
   -ms-grid-column-span: 2;
   grid-column: span 2;
+  background-color: #6a4641;
 }
 
 .product-card-type {
@@ -1718,6 +1710,10 @@ select:not([multiple]) {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0;
+}
+
+.field-group-children {
+  flex-wrap: nowrap;
 }
 
 .p-date-field::before {

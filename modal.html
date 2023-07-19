@@ -205,13 +205,13 @@
                 <p class="field-group p-date-field">
                   <label class="field-name" for="modal-entry">Дата заезда:</label>
                   <input class="modal-form-field date-field" type="text" id="modal-entry" name="modal-entry-date"
-                    placeholder="Укажите дату" value="27 апреля 2020">
+                    placeholder="Укажите дату" value="27 апреля 2020" required>
                   <span class="modal-warning-date">Мы не можем отправить вас в прошлое.</span>
                 </p>
                 <p class="field-group p-date-field">
                   <label class="field-name" for="modal-depature">Дата выезда:</label>
                   <input class="modal-form-field date-field" type="text" id="modal-depature" name="modal-depature-date"
-                    placeholder="Укажите дату" value="1 сентября 2023">
+                    placeholder="Укажите дату" value="1 сентября 2023" required>
                   <span class="modal-hint-date">На эти даты есть свободные номера. Пока есть.</span>
                 </p>
                 <div class="modal-group-persons-container">
@@ -225,7 +225,7 @@
                         <span class="visually-hidden">Уменьшить количество человек</span>
                       </button>
                       <input class="modal-form-field persons-field" type="number" name="modal-adults" id="modal-adults"
-                        value="2">
+                        value="2" required>
                       <button class="plus-icon" type="button">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#CDC7C4" />
@@ -234,7 +234,7 @@
                       </button>
                     </div>
                   </div>
-                  <div class="field-group">
+                  <div class="field-group field-group-children">
                     <span class="field-name">
                       <label class="field-name" for="modal-children">Дети:</label>
                     </span>
