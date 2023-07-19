@@ -370,6 +370,7 @@ img {
   -o-object-fit: cover;
   object-fit: cover;
   height: 100%;
+  background-color: #adc6d4;
 }
 
 .calling-title,
@@ -713,7 +714,7 @@ img {
 
 .catalog-background {
   width: 100%;
-  min-height: 412px;
+  min-height: 307pxpx;
   padding-bottom: 50px;
   background-color: #789ec2;
   background-image: url("../images/catalog/filter-background.jpg");
@@ -1346,6 +1347,7 @@ select:not([multiple]) {
 .product-card-image {
   -ms-grid-column-span: 2;
   grid-column: span 2;
+  background-color: #6a4641;
 }
 
 .product-card-type {
